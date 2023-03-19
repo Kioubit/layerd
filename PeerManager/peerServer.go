@@ -270,7 +270,6 @@ func peerAnnouncementServer() {
 		if msg.NodeID == MyNodeID {
 			continue
 		}
-		//fmt.Printf("Received discovery message from %v %s\n", remoteAddr, NodeIDToString(msg.NodeID))
 		nodeStateMu.Lock()
 		if msg.SelectedNetwork < nodeState.SelectedNetwork {
 			denyListMu.Lock()

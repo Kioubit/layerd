@@ -93,7 +93,6 @@ func txProcessor(packetChan chan *txInfo) {
 			continue
 		}
 		_, _ = conn.Write(*pkt.packet)
-		//_, _ = conn.Write(append([]byte{pkt.l3id}, *pkt.packet...))
 	}
 }
 
