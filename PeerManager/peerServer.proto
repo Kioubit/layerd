@@ -1,0 +1,10 @@
+syntax ="proto3";
+
+package PeerManager;
+option go_package = "pb/";
+
+message Announcement {
+  fixed64 nodeID = 1;
+  uint64 selectedNetwork = 2;
+  bytes networkIPv6 = 3;
+}

@@ -1,0 +1,25 @@
+syntax ="proto3";
+
+package PeerManager;
+option go_package = "pb/";
+
+message CommandMessage {
+  fixed64 nodeID = 1;
+  bytes nodeIPv6 = 2;
+  uint32 generation = 3;
+  repeated Prefix prefixes = 4;
+  repeated Prefix withdrawnPrefixes  = 5;
+}
+
+message Prefix {
+  oneof prefixIP {
+    fixed32 v4 = 1;
+    bytes v6 = 2;
+  }
+  uint32 prefixLength = 3;
+  uint32 l3ID = 4;
+  bytes nextHop = 5;
+}
+
+
+
